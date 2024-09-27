@@ -34,9 +34,9 @@ console.log(palabrasTerminanConA(palabras)) // -> true
 // 4.1 Crea una función llamada `buscaPalabras` que reciba dos parámetros: un array `words` y una palabra `word`.
 // Busca el índice de la palabra en el array y devuelve todas las palabras más largas que ese índice.
 function buscaPalabras(words, word) {
-    const index= word.indexof(word);
-    if(index==-1)return  [];
-    return word.filter((_, i) => i > index);
+   const index = words.indexOf(word);
+    if (index === -1) return [];
+    return words.filter((_, i) => i > index);
 }
 
 // 5. Matrices
@@ -66,21 +66,19 @@ const matrix = [
 // 6.1 Crea una función llamada `findMinMaxPages` que reciba un array de números (representando el número de páginas de libros).
 // La función debe devolver un array con dos posiciones: el índice del libro con menos páginas y el índice del libro con más páginas.
 function findMinMaxPages(books) {
-  let minIndex =0;
-   let maxindex=0;
-  for(let i=1;i<books.length;i++){
-     if(books[i]<books[minIndex ]){
-        minIndex = i;
-     }
-     if(books[i]<books[maxindex]){
-        
-        maxindex = i;
-
-  }
-  return [minIndex,maxindex];
-
+     let minIndex = 0;
+    let maxIndex = 0;
+    for (let i = 1; i < books.length; i++) {
+        if (books[i] < books[minIndex]) {
+            minIndex = i;
+        }
+        if (books[i] > books[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+    return [minIndex, maxIndex];
 }
-}
+
 
 const libros = [350, 120, 540, 275, 390, 130, 670];
 const resultado = findMinMaxPages(libros);
