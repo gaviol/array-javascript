@@ -43,15 +43,16 @@ function buscaPalabras(words, word) {
 // 5.1 Crea una función llamada `findJavaScript` que reciba una matriz de cadenas y devuelva la posición de "JavaScript".
 // Si no la encuentra, devuelve [-1, -1].
 function findJavaScript(matrix) {
-   for(let i=0;i<matrix.length;i++){
-    for(let j=0;j<matrix.length;j++){
-        if(matrix[i][j]==='JavaScript'){
-        return[i,j];
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) { // Cambiado a matrix[i].length
+            if (matrix[i][j] === 'JavaScript') {
+                return [i, j];
+            }
         }
     }
-
-   }return[-1,-1];
+    return [-1, -1];
 }
+
 
 const matrix = [
     ['HTML', 'CSS', 'JavaScript'],
